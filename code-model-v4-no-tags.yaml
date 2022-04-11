@@ -1,0 +1,281 @@
+info:
+  title: ArtifactsClient
+schemas:
+  strings:
+    - &ref_0
+      type: string
+      language:
+        default:
+          name: String
+          description: simple string
+      protocol: {}
+    - &ref_2
+      type: string
+      apiVersions:
+        - version: '2020-12-01'
+        - version: '2021-06-01'
+      language:
+        default:
+          name: LinkedServiceReferenceName
+          description: Reference LinkedService name.
+      protocol: {}
+    - &ref_4
+      type: string
+      apiVersions:
+        - version: '2020-12-01'
+        - version: '2021-06-01'
+      language:
+        default:
+          name: CloudErrorBodyCode
+          description: Error code.
+      protocol: {}
+    - &ref_5
+      type: string
+      apiVersions:
+        - version: '2020-12-01'
+        - version: '2021-06-01'
+      language:
+        default:
+          name: CloudErrorBodyMessage
+          description: Error message.
+      protocol: {}
+    - &ref_6
+      type: string
+      apiVersions:
+        - version: '2020-12-01'
+        - version: '2021-06-01'
+      language:
+        default:
+          name: CloudErrorBodyTarget
+          description: Property name/path in request associated with error.
+      protocol: {}
+  choices:
+    - &ref_1
+      choices:
+        - value: LinkedServiceReference
+          language:
+            default:
+              name: LinkedServiceReference
+              description: ''
+      type: choice
+      apiVersions:
+        - version: '2020-12-01'
+      choiceType: *ref_0
+      language:
+        default:
+          name: Type
+          description: Linked service reference type.
+      protocol: {}
+  anyObjects:
+    - &ref_3
+      type: any-object
+      language:
+        default:
+          name: AnyObject
+          description: Any object
+      protocol: {}
+  objects:
+    - type: object
+      apiVersions:
+        - version: '2020-12-01'
+        - version: '2021-06-01'
+      properties:
+        - schema: *ref_1
+          required: true
+          serializedName: type
+          language:
+            default:
+              name: type
+              description: Linked service reference type.
+          protocol: {}
+        - schema: *ref_2
+          required: true
+          serializedName: referenceName
+          language:
+            default:
+              name: referenceName
+              description: Reference LinkedService name.
+          protocol: {}
+        - schema: *ref_3
+          required: false
+          serializedName: parameters
+          language:
+            default:
+              name: parameters
+              description: Arguments for LinkedService.
+          protocol: {}
+      language:
+        default:
+          name: LinkedServiceReference
+          description: Linked service reference type.
+          namespace: ''
+      protocol: {}
+    - &ref_7
+      type: object
+      apiVersions:
+        - version: '2020-12-01'
+      properties:
+        - schema: &ref_8
+            type: object
+            apiVersions:
+              - version: '2020-12-01'
+            properties:
+              - schema: *ref_4
+                required: true
+                serializedName: code
+                language:
+                  default:
+                    name: code
+                    description: Error code.
+                protocol: {}
+              - schema: *ref_5
+                required: true
+                serializedName: message
+                language:
+                  default:
+                    name: message
+                    description: Error message.
+                protocol: {}
+              - schema: *ref_6
+                required: false
+                serializedName: target
+                language:
+                  default:
+                    name: target
+                    description: Property name/path in request associated with error.
+                protocol: {}
+              - schema: &ref_11
+                  type: array
+                  apiVersions:
+                    - version: '2020-12-01'
+                  elementType: *ref_7
+                  language:
+                    default:
+                      name: CloudErrorBodyDetails
+                      description: Array with additional error details.
+                  protocol: {}
+                required: false
+                serializedName: details
+                language:
+                  default:
+                    name: details
+                    description: Array with additional error details.
+                protocol: {}
+            extensions:
+              x-ms-external: true
+            language:
+              default:
+                name: CloudErrorBody
+                description: The object that defines the structure of an Azure Synapse error.
+                namespace: ''
+            protocol: {}
+          required: true
+          serializedName: error
+          extensions:
+            x-ms-client-flatten: true
+            x-ms-external: true
+          language:
+            default:
+              name: error
+              description: Error data
+          protocol: {}
+      extensions:
+        x-ms-external: true
+      language:
+        default:
+          name: CloudError
+          description: The object that defines the structure of an Azure Synapse error response.
+          namespace: ''
+      protocol: {}
+    - *ref_8
+    - &ref_9
+      type: object
+      apiVersions:
+        - version: '2021-06-01'
+      properties:
+        - schema: &ref_10
+            type: object
+            apiVersions:
+              - version: '2021-06-01'
+            properties:
+              - schema: *ref_4
+                required: true
+                serializedName: code
+                language:
+                  default:
+                    name: code
+                    description: Error code.
+                protocol: {}
+              - schema: *ref_5
+                required: true
+                serializedName: message
+                language:
+                  default:
+                    name: message
+                    description: Error message.
+                protocol: {}
+              - schema: *ref_6
+                required: false
+                serializedName: target
+                language:
+                  default:
+                    name: target
+                    description: Property name/path in request associated with error.
+                protocol: {}
+              - schema: &ref_12
+                  type: array
+                  apiVersions:
+                    - version: '2021-06-01'
+                  elementType: *ref_9
+                  language:
+                    default:
+                      name: CloudErrorBodyDetails
+                      description: Array with additional error details.
+                  protocol: {}
+                required: false
+                serializedName: details
+                language:
+                  default:
+                    name: details
+                    description: Array with additional error details.
+                protocol: {}
+            extensions:
+              x-ms-external: true
+            language:
+              default:
+                name: CloudErrorBodyAutoGenerated
+                description: The object that defines the structure of an Azure Synapse error.
+                namespace: ''
+            protocol: {}
+          required: true
+          serializedName: error
+          extensions:
+            x-ms-client-flatten: true
+            x-ms-external: true
+          language:
+            default:
+              name: error
+              description: Error data
+          protocol: {}
+      extensions:
+        x-ms-external: true
+      language:
+        default:
+          name: CloudErrorAutoGenerated
+          description: The object that defines the structure of an Azure Synapse error response.
+          namespace: ''
+      protocol: {}
+    - *ref_10
+  arrays:
+    - *ref_11
+    - *ref_12
+operationGroups: []
+security:
+  authenticationRequired: false
+  schemes: []
+language:
+  default:
+    name: ArtifactsClient
+    description: ''
+protocol:
+  http: {}

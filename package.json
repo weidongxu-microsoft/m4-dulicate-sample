@@ -1,0 +1,19 @@
+{
+  "name": "azure-rest-api-specs-tests",
+  "private": true,
+  "author": {
+    "name": "Microsoft Corporation",
+    "email": "azsdkteam@microsoft.com",
+    "url": "https://github.com/azure/azure-rest-api-specs"
+  },
+  "version": "0.1.0",
+  "description": "Tests for Azure REST API Specifications",
+  "license": "MIT",
+  "scripts": {
+    "prettier-fix": "prettier --write .",
+    "prettier": "prettier"
+  },
+  "dependencies": {
+    "prettier": "^2.6.2"
+  }
+}
